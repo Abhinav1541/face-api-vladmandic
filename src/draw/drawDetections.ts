@@ -20,7 +20,6 @@ export function drawDetections(
 
   detectionsArray.forEach((det) => {
     // eslint-disable-next-line no-nested-ternary
-    const score = det instanceof FaceDetection ? det.score : isWithFaceDetection(det) ? det.detection.score : undefined;
 
     // eslint-disable-next-line no-nested-ternary
     const box = det instanceof FaceDetection ? det.box : isWithFaceDetection(det) ? det.detection.box : new Box(det);

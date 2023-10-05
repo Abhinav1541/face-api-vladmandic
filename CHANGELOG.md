@@ -5,12 +5,14 @@
   
   Author: **Vladimir Mandic <mandic00@live.com>**  
   License: **MIT**  
-  Repository: **<https://github.com/Abhinav1541/face-api-vladmandic>**  
+  Repository: **<git@github.com:Abhinav1541/face-api-vladmandic.git>**  
   
 ## Changelog
   
-### **HEAD -> master** 2023/06/12 mandic00@live.com
+### **HEAD -> master** 2023/10/06 abhi1541singh@gmail.com
 
+- removed extra space from score text
+- added red box, removed score and expression on top left
 
 ### **1.7.12** 2023/06/12 mandic00@live.com
 

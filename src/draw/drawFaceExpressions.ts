@@ -30,6 +30,7 @@ export function drawFaceExpressions(
 
     const sorted = expr.asSortedArray();
     const resultsToDisplay = [sorted[0]];
+    minConfidence *= 2;
 
     const anchor = isWithFaceDetection(e)
       ? e.detection.box.topLeft
