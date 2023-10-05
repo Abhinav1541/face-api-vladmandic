@@ -12,16 +12,16 @@ export enum AnchorPosition {
   // eslint-disable-next-line no-unused-vars
   BOTTOM_LEFT = 'BOTTOM_LEFT',
   // eslint-disable-next-line no-unused-vars
-  BOTTOM_RIGHT = 'BOTTOM_RIGHT'
+  BOTTOM_RIGHT = 'BOTTOM_RIGHT',
 }
 
 export interface IDrawTextFieldOptions {
-  anchorPosition?: AnchorPosition
-  backgroundColor?: string
-  fontColor?: string
-  fontSize?: number
-  fontStyle?: string
-  padding?: number
+  anchorPosition?: AnchorPosition;
+  backgroundColor?: string;
+  fontColor?: string;
+  fontSize?: number;
+  fontStyle?: string;
+  padding?: number;
 }
 
 export class DrawTextFieldOptions implements IDrawTextFieldOptions {
@@ -39,13 +39,18 @@ export class DrawTextFieldOptions implements IDrawTextFieldOptions {
 
   constructor(options: IDrawTextFieldOptions = {}) {
     const {
-      anchorPosition, backgroundColor, fontColor, fontSize, fontStyle, padding,
+      anchorPosition,
+      backgroundColor,
+      fontColor,
+      fontSize,
+      fontStyle,
+      padding,
     } = options;
     this.anchorPosition = anchorPosition || AnchorPosition.TOP_LEFT;
-    this.backgroundColor = backgroundColor || 'rgba(0, 0, 0, 0.5)';
+    this.backgroundColor = backgroundColor || 'rgba(0, 0, 0, 0)';
     this.fontColor = fontColor || 'rgba(255, 255, 255, 1)';
-    this.fontSize = fontSize || 14;
-    this.fontStyle = fontStyle || 'Georgia';
+    this.fontSize = fontSize || 28;
+    this.fontStyle = fontStyle || 'Comic Sans MS';
     this.padding = padding || 4;
   }
 }
@@ -53,7 +58,7 @@ export class DrawTextFieldOptions implements IDrawTextFieldOptions {
 export class DrawTextField {
   public text: string[];
 
-  public anchor : IPoint;
+  public anchor: IPoint;
 
   public options: DrawTextFieldOptions;
 
@@ -63,31 +68,40 @@ export class DrawTextField {
     options: IDrawTextFieldOptions = {},
   ) {
     // eslint-disable-next-line no-nested-ternary
-    this.text = typeof text === 'string'
-      ? [text]
-      : (text instanceof DrawTextField ? text.text : text);
+    if (typeof text === 'string') {
+      this.text = [text];
+    } else if (text instanceof DrawTextField) {
+      this.text = text.text;
+    } else {
+      this.text = text;
+    }
     this.anchor = anchor;
     this.options = new DrawTextFieldOptions(options);
   }
 
   measureWidth(ctx: CanvasRenderingContext2D): number {
     const { padding } = this.options;
-    return this.text.map((l) => ctx.measureText(l).width).reduce((w0, w1) => (w0 < w1 ? w1 : w0), 0) + (2 * padding);
+    return (
+      this.text.map((l) => ctx.measureText(l).width).reduce((w0, w1) => (w0 < w1 ? w1 : w0), 0) + 2 * padding
+    );
   }
 
   measureHeight(): number {
     const { fontSize, padding } = this.options;
-    return this.text.length * fontSize + (2 * padding);
+    return this.text.length * fontSize + 2 * padding;
   }
 
-  getUpperLeft(ctx: CanvasRenderingContext2D, canvasDims?: IDimensions): IPoint {
+  getUpperLeft(
+    ctx: CanvasRenderingContext2D,
+    canvasDims?: IDimensions,
+  ): IPoint {
     const { anchorPosition } = this.options;
     const isShiftLeft = anchorPosition === AnchorPosition.BOTTOM_RIGHT || anchorPosition === AnchorPosition.TOP_RIGHT;
     const isShiftTop = anchorPosition === AnchorPosition.BOTTOM_LEFT || anchorPosition === AnchorPosition.BOTTOM_RIGHT;
 
     const textFieldWidth = this.measureWidth(ctx);
     const textFieldHeight = this.measureHeight();
-    const x = (isShiftLeft ? this.anchor.x - textFieldWidth : this.anchor.x);
+    const x = isShiftLeft ? this.anchor.x - textFieldWidth : this.anchor.x;
     const y = isShiftTop ? this.anchor.y - textFieldHeight : this.anchor.y;
 
     // adjust anchor if text box exceeds canvas borders
@@ -104,9 +118,7 @@ export class DrawTextField {
     const canvas = resolveInput(canvasArg);
     const ctx = getContext2dOrThrow(canvas);
 
-    const {
-      backgroundColor, fontColor, fontSize, fontStyle, padding,
-    } = this.options;
+    const { backgroundColor, fontColor, fontSize, fontStyle, padding } = this.options;
 
     ctx.font = `${fontSize}px ${fontStyle}`;
     const maxTextWidth = this.measureWidth(ctx);
@@ -119,7 +131,7 @@ export class DrawTextField {
     ctx.fillStyle = fontColor;
     this.text.forEach((textLine, i) => {
       const x = padding + upperLeft.x;
-      const y = padding + upperLeft.y + ((i + 1) * fontSize);
+      const y = padding + upperLeft.y + (i + 1) * fontSize;
       ctx.fillText(textLine, x, y);
     });
   }

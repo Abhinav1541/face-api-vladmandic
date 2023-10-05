@@ -5,14 +5,14 @@
   
   Author: **Vladimir Mandic <mandic00@live.com>**  
   License: **MIT**  
-  Repository: **<https://github.com/vladmandic/face-api>**  
+  Repository: **<https://github.com/Abhinav1541/face-api-vladmandic>**  
   
 ## Changelog
   
+### **HEAD -> master** 2023/06/12 mandic00@live.com
+
+
 ### **1.7.12** 2023/06/12 mandic00@live.com
-
-
-### **origin/master** 2023/05/08 mandic00@live.com
 
 
 ### **1.7.11** 2023/05/08 mandic00@live.com
@@ -28,7 +28,7 @@
 ### **1.7.8** 2023/01/06 mandic00@live.com
 
 
-### **1.7.7** 2022/12/01 mandic00@live.com
+### **1.7.7** 2022/12/02 mandic00@live.com
 
 
 ### **1.7.6** 2022/10/18 mandic00@live.com
@@ -40,7 +40,7 @@
 - create funding.yml
 - add node-wasm demo
 
-### **1.7.4** 2022/09/25 mandic00@live.com
+### **1.7.4** 2022/09/26 mandic00@live.com
 
 - improve face compare performance
 
@@ -51,9 +51,7 @@
 ### **1.7.2** 2022/08/23 mandic00@live.com
 
 - document and remove optional dependencies
-
-### **release: 1.7.1** 2022/07/25 mandic00@live.com
-
+- release build
 
 ### **1.7.1** 2022/07/25 mandic00@live.com
 
@@ -77,8 +75,9 @@
 
 - fixed typo error (#97)
 
-### **1.6.6** 2022/03/04 mandic00@live.com
+### **1.6.6** 2022/03/05 mandic00@live.com
 
+- toolkit refresh
 
 ### **1.6.5** 2022/02/07 mandic00@live.com
 
@@ -93,7 +92,7 @@
 ### **1.6.2** 2022/01/01 mandic00@live.com
 
 
-### **1.6.1** 2021/12/09 mandic00@live.com
+### **1.6.1** 2021/12/10 mandic00@live.com
 
 - rebuild
 - release preview
@@ -107,9 +106,6 @@
 
 
 ### **1.5.6** 2021/10/22 mandic00@live.com
-
-
-### **release: 1.5.5** 2021/10/19 mandic00@live.com
 
 
 ### **1.5.5** 2021/10/19 mandic00@live.com
@@ -137,13 +133,7 @@
 ### **1.4.2** 2021/08/31 mandic00@live.com
 
 
-### **release: 1.4.1** 2021/07/29 mandic00@live.com
-
-
 ### **1.4.1** 2021/07/29 mandic00@live.com
-
-
-### **release: 1.3.1** 2021/06/18 mandic00@live.com
 
 
 ### **1.3.1** 2021/06/08 mandic00@live.com
@@ -164,16 +154,13 @@
 ### **1.2.3** 2021/05/04 mandic00@live.com
 
 
-### **update for tfjs 3.6.0** 2021/04/30 mandic00@live.com
-
-
 ### **1.2.2** 2021/04/30 mandic00@live.com
 
 - add node-wasm demo
 - accept uri as input to demo node and node-canvas
 - major version full rebuild
 
-### **1.2.1** 2021/04/22 mandic00@live.com
+### **1.2.1** 2021/04/23 mandic00@live.com
 
 - add npmrc
 - add canvas/image based demo to decode webp
@@ -228,10 +215,7 @@
 - reformatted model manifests and weights
 - create api specs
 
-### **1.0.2** 2021/03/09 mandic00@live.com
-
-
-### **release: 1.0.1** 2021/03/09 mandic00@live.com
+### **1.0.2** 2021/03/10 mandic00@live.com
 
 
 ### **1.0.1** 2021/03/09 mandic00@live.com
@@ -262,18 +246,13 @@
 - exception handling
 - 0.12.8
 - exception handling
-
-### **0.12.7** 2021/02/17 mandic00@live.com
-
+- full rebuild
 - 0.12.7
 - 0.12.6
 - 0.12.5
 - 0.12.4
 - 0.12.3
 - 0.12.2
-
-### **update for tfjs 3.0.0** 2021/01/29 mandic00@live.com
-
 - 0.12.1
 - rebuild
 - 0.11.6
@@ -315,7 +294,7 @@
 - remove http reff
 - fixed typos
 
-### **0.9.1** 2020/12/02 mandic00@live.com
+### **0.9.1** 2020/12/03 mandic00@live.com
 
 - redesigned tfjs bundling and build process
 - push
@@ -328,27 +307,27 @@
 
 - removed node-fetch dependency
 
-### **0.8.8** 2020/11/03 mandic00@live.com
+### **0.8.8** 2020/11/04 mandic00@live.com
 
 
-### **0.8.7** 2020/11/03 mandic00@live.com
+### **0.8.7** 2020/11/04 mandic00@live.com
 
 - removed type from package.json and added nodejs example
 
 ### **0.8.6** 2020/10/29 mandic00@live.com
 
 
-### **0.8.5** 2020/10/27 mandic00@live.com
+### **0.8.5** 2020/10/28 mandic00@live.com
 
 
 ### **0.8.4** 2020/10/27 mandic00@live.com
 
 - fix webpack compatibility issue
 
-### **0.8.3** 2020/10/25 mandic00@live.com
+### **0.8.3** 2020/10/26 mandic00@live.com
 
 
-### **0.8.2** 2020/10/25 mandic00@live.com
+### **0.8.2** 2020/10/26 mandic00@live.com
 
 - fix for wasm compatibility
 
@@ -360,13 +339,13 @@
 
 - added nobundle
 
-### **0.7.3** 2020/10/13 mandic00@live.com
+### **0.7.3** 2020/10/14 mandic00@live.com
 
 
-### **0.7.2** 2020/10/13 mandic00@live.com
+### **0.7.2** 2020/10/14 mandic00@live.com
 
 
-### **0.7.1** 2020/10/13 mandic00@live.com
+### **0.7.1** 2020/10/14 mandic00@live.com
 
 - switched to monolithic build
 
@@ -403,11 +382,11 @@
 
 - adding build
 
-### **0.4.4** 2020/08/30 cyan00@gmail.com
+### **0.4.4** 2020/08/31 cyan00@gmail.com
 
 - change build process
 
-### **0.4.3** 2020/08/29 cyan00@gmail.com
+### **0.4.3** 2020/08/30 cyan00@gmail.com
 
 - fix node build error
 
@@ -431,14 +410,14 @@
 ### **0.3.6** 2020/08/21 cyan00@gmail.com
 
 
-### **0.3.5** 2020/08/19 cyan00@gmail.com
+### **0.3.5** 2020/08/20 cyan00@gmail.com
 
 
-### **0.3.4** 2020/08/19 cyan00@gmail.com
+### **0.3.4** 2020/08/20 cyan00@gmail.com
 
 - switch to commonjs and es2018 for compatibility
 
-### **0.3.3** 2020/08/19 cyan00@gmail.com
+### **0.3.3** 2020/08/20 cyan00@gmail.com
 
 
 ### **0.3.2** 2020/08/18 cyan00@gmail.com

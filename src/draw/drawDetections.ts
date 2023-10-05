@@ -1,10 +1,16 @@
 import { Box, IBoundingBox, IRect } from '../classes/index';
 import { FaceDetection } from '../classes/FaceDetection';
-import { isWithFaceDetection, WithFaceDetection } from '../factories/WithFaceDetection';
-import { round } from '../utils/index';
+import {
+  isWithFaceDetection,
+  WithFaceDetection,
+} from '../factories/WithFaceDetection';
 import { DrawBox } from './DrawBox';
 
-export type TDrawDetectionsInput = IRect | IBoundingBox | FaceDetection | WithFaceDetection<{}>
+export type TDrawDetectionsInput =
+  | IRect
+  | IBoundingBox
+  | FaceDetection
+  | WithFaceDetection<{}>;
 
 export function drawDetections(
   canvasArg: string | HTMLCanvasElement,
@@ -14,16 +20,12 @@ export function drawDetections(
 
   detectionsArray.forEach((det) => {
     // eslint-disable-next-line no-nested-ternary
-    const score = det instanceof FaceDetection
-      ? det.score
-      : (isWithFaceDetection(det) ? det.detection.score : undefined);
+    const score = det instanceof FaceDetection ? det.score : isWithFaceDetection(det) ? det.detection.score : undefined;
 
     // eslint-disable-next-line no-nested-ternary
-    const box = det instanceof FaceDetection
-      ? det.box
-      : (isWithFaceDetection(det) ? det.detection.box : new Box(det));
+    const box = det instanceof FaceDetection ? det.box : isWithFaceDetection(det) ? det.detection.box : new Box(det);
 
-    const label = score ? `${round(score)}` : undefined;
+    const label = score ? ' ' : undefined;
     new DrawBox(box, { label }).draw(canvasArg);
   });
 }
