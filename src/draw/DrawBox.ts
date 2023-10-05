@@ -26,8 +26,8 @@ export class DrawBoxOptions {
 
   constructor(options: IDrawBoxOptions = {}) {
     const { boxColor, lineWidth, label, drawLabelOptions } = options;
-    this.boxColor = boxColor || 'rgba(255, 0, 0, 1)';
-    this.lineWidth = lineWidth || 6;
+    this.boxColor = boxColor || 'rgba(0, 0, 255, 1)';
+    this.lineWidth = lineWidth || 2;
     this.label = label;
 
     const defaultDrawLabelOptions = {

@@ -25,7 +25,7 @@ export function drawDetections(
     // eslint-disable-next-line no-nested-ternary
     const box = det instanceof FaceDetection ? det.box : isWithFaceDetection(det) ? det.detection.box : new Box(det);
 
-    const label = score ? '' : undefined;
+    const label = undefined;
     new DrawBox(box, { label }).draw(canvasArg);
   });
 }

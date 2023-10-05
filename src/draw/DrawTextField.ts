@@ -51,7 +51,7 @@ export class DrawTextFieldOptions implements IDrawTextFieldOptions {
     this.fontColor = fontColor || 'rgba(255, 255, 255, 1)';
     this.fontSize = fontSize || 28;
     this.fontStyle = fontStyle || 'Comic Sans MS';
-    this.padding = padding || 4;
+    this.padding = padding || 8;
   }
 }
 

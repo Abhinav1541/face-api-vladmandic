@@ -1,4 +1,4 @@
-export const FACE_EXPRESSION_LABELS = ['neutral', 'happy', 'sad', 'angry', 'fearful', 'disgusted', 'surprised'];
+export const FACE_EXPRESSION_LABELS = ['Neutral', 'Happy', 'Sad', 'Angry', 'Fearful', 'Disgusted', 'Surprised'];
 
 export class FaceExpressions {
   public neutral = 0;

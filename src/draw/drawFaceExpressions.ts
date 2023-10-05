@@ -29,7 +29,7 @@ export function drawFaceExpressions(
     }
 
     const sorted = expr.asSortedArray();
-    const resultsToDisplay = sorted.filter((exprLocal) => exprLocal.probability > minConfidence);
+    const resultsToDisplay = [sorted[0]];
 
     const anchor = isWithFaceDetection(e)
       ? e.detection.box.topLeft
